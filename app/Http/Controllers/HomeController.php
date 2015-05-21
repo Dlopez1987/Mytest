@@ -57,7 +57,7 @@ class HomeController extends Controller {
                 'page'=>$pages,);
 
             return    View::make('home1')->with($data);
-
+   die('git');
        }
 
             //dd($query[0]->foto_frente);
