@@ -34,7 +34,7 @@ class ConsultaController extends Controller {
                                         persons.foto_frente as foto_frente,
                                         persons.foto_dorso as foto_dorso,
 
-                                        motivo_rechazo.descripcion as motivo"))
+                                        motivo_rechazo.descripcion as motivo,contracts.created_at_date"))
                     ->get();
 
                 $statusorder = array("0" => "Todos", "2" => "Aprobados", "3" => "Rechazados", "1" => "Pendiente");
@@ -60,7 +60,7 @@ class ConsultaController extends Controller {
                                         persons.foto_frente as foto_frente,
                                         persons.foto_dorso as foto_dorso,
 
-                                        motivo_rechazo.descripcion as motivo"))
+                                        motivo_rechazo.descripcion as motivo,contracts.created_at_date"))
 
                 ->get();
 

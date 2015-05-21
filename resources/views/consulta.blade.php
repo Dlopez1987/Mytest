@@ -78,21 +78,21 @@
                                             <thead>
                                             <tr>
 
-                                                <th class=" text-light-blue ">Nombre/Apellido</th>
-                                                <th class=" text-light-blue ">Cedula</th>
-                                                <th class=" text-light-blue ">Fecha Vencimiento CI</th>
-                                                <th class=" text-light-blue ">IVR</th>
-                                                <th class=" text-light-blue ">CSS</th>
-                                                <th class=" text-light-blue ">Estado</th>
-                                                <th class=" text-light-blue ">frente</th>
-                                                <th class=" text-light-blue ">dorso</th>
-                                                <th class=" text-light-blue ">Fecha</th>
-                                                <th class=" text-light-blue ">Hora</th>
+                                                <th class=" text-light-blue text-center">Nombre/Apellido</th>
+                                                <th class=" text-light-blue text-center">Cedula</th>
+                                                <th class=" text-light-blue text-center">CI Vencimiento</th>
+                                                <th class=" text-light-blue text-center">IVR</th>
+                                                <th class=" text-light-blue text-center ">CSS</th>
+                                                <th class=" text-light-blue text-center">Estado</th>
+                                                <th class=" text-light-blue text-center">frente</th>
+                                                <th class=" text-light-blue text-center">dorso</th>
+                                                <th class=" text-light-blue text-center">Fecha</th>
+
                                             </tr>
                                             </thead>
                                             @foreach($query as $v)
                                             <tbody>
-                                            <tr>
+                                            <tr class="text-center">
                                                 <td>{{{$v->nombre}}}{{{$v->apellido}}}</td>
                                                 <td>{{{$v->nro_cedula}}}</td>
                                                 <td>{{{$v->fec_vencimiento}}}</td>
@@ -115,8 +115,8 @@
                                                         <img src="data:image/png;base64,{{{$v->foto_dorso}}}" width='60' height='80'/>
                                                     </a>
                                                 </td>
-                                               <td>fecha</td>
-                                                <td>hora</td>
+                                               <td> {{{$v->created_at_date}}}</td>
+
 
 
                                             </tr>
@@ -155,9 +155,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @endif
+
                                     </div>
                                 </div>
+                                @else
+                                    <p class='text-light-blue'><i class="fa fa-check-square-o"></i>No hay operaciones pendientes.</p>
+                                    @endif
                                 <!-- /.box-body -->
                             </div>
                         </div>

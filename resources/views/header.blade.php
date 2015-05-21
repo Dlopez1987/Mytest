@@ -1,10 +1,17 @@
+
 <header class="main-header">
+    <a href="#">
+    <img    class="pull-left image"src="{{ asset('/image/personal-logo-empresas-aplicacion.png') }}" alt="" width='239' height='50'/>
+    </a>
     <!-- Logo -->
-    <a href="#" class="logo"><h2><b>Perso</b>nal</h2></a>
-    {{--<a href="#" class="logo"><img src="{{ asset('/image/personal-logo-empresas-aplicacion.png') }}" alt="2" width='200' height='48'/> </a>--}}
+    {{--<a href="#" class="logo"><h2><b>Perso</b>nal</h2></a>--}}
+
     <!-- Header Navbar: style can be found in header.less -->
+
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
+
+
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
         </a>

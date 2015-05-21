@@ -69,27 +69,27 @@ class AprobadosController extends Controller {
 	 */
 	public function update()
 	{
-        $entrada=\Input::all();
-       $query=\DB::table('persons')
-                ->select('id','nro_cedula','estado')
-                ->where('id','=',$entrada['id'])
-                ->get();
+        $entrada = \Input::all();
+        $query = \DB::table('persons')
+            ->select('id', 'nro_cedula', 'estado')
+            ->where('id', '=', $entrada['id'])
+            ->get();
         //dd($query[0]->estado);
-        if($query[0]->estado == 2 || $query[0]->estado == 3 )
-            return redirect()->back()->with('message','operacion ya realizada por otro usuario');
-        elseif($query[0]->estado == 1)
+        if ($query[0]->estado == 2 || $query[0]->estado == 3)
+            return redirect()->back()->with('message', 'operacion ya realizada por otro usuario');
+        elseif ($query[0]->estado == 1)
             \DB::table('persons')
-                ->where('id','=',$entrada['id'])
-                ->update(['estado'=>2]);
+                ->where('id', '=', $entrada['id'])
+                ->update(['estado' => 2]);
 
         $data = array(
             'message' => ' Operacion Aprobada',
-            'alert'    => 'success'
+            'alert' => 'success'
         );
 //        \Session::get('message','Bienvenido al reporte de ');
 //        \Session::get('alert','success');
         return redirect()->back()->with($data);
-       //28.6 return redirect()->back();
+        //28.6 return redirect()->back();
 
 
 	}

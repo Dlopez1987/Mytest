@@ -44,8 +44,8 @@ class HomeController extends Controller {
         $offset = ($pages- 1) * 20;
            $query = \DB::table('persons')
                ->join('contracts', 'persons.nro_cedula', '=', 'contracts.nro_cedula')
-               ->select(\DB::raw("persons.id as id,contracts.ivr as ivr,persons.nro_cedula as nro_cedula,persons.nombre as nombre,persons.apellido as apellido,contracts.codigo_ss as codigo_ss,persons.estado as estado,persons.foto_frente as foto_frente,persons.foto_dorso as foto_dorso"))
-               ->where('personss.estado', '=', 1)
+               ->select(\DB::raw("persons.id as id,contracts.ivr as ivr,persons.nro_cedula as nro_cedula,persons.fec_vencimiento,persons,nombre as nombre,persons.apellido as apellido,contracts.codigo_ss as codigo_ss,persons.estado as estado,persons.foto_frente as foto_frente,persons.foto_dorso as foto_dorso,contracts.created_at_date"))
+               ->where('persons.estado', '=', 1)
                ->take(20)->skip($offset)->get();
        }catch (\Exception $e){
            \Log::info("error al intentar realizar la consulta ");
@@ -57,7 +57,7 @@ class HomeController extends Controller {
                 'page'=>$pages,);
 
             return    View::make('home1')->with($data);
-   die('git');
+
        }
 
             //dd($query[0]->foto_frente);
@@ -88,6 +88,7 @@ class HomeController extends Controller {
 
 //$data=array('image'=>image.png);
        // \Log::info($query);
+
         $data=array('query'=>$query,
                     'contador'=>$contador,
                     'total'=>$total,

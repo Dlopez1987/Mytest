@@ -27,18 +27,19 @@
 
                         @if($query)
 
-                <table
-                            ="example" class="example table-striped table-bordered" cellspacing="0" width="100%">
+                <table id="example" class="example table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr >
                         <th class=" text-light-blue text-center">IVR</th>
                         <th class=" text-light-blue text-center">N°Cedula</th>
+                        <th class=" text-light-blue text-center">CI Vencimiento</th>
                         <th class=" text-light-blue text-center">Nombre/Apellido</th>
                         <th class=" text-light-blue text-center">CSS</th>
                         <th class=" text-light-blue text-center">Aprobado</th>
                         <th class=" text-light-blue text-center">Rechazado</th>
                         <th class=" text-light-blue text-center">Frente</th>
                         <th class=" text-light-blue text-center">Dorso</th>
+                        <th class=" text-light-blue text-center">Fecha</th>
                         <tr></tr>
                     </tr>
                     </thead>
@@ -53,6 +54,7 @@
                             <tr class="text-center">
                                 <td>{{{$v->ivr}}} </td>
                                 <td class="">{{{$v->nro_cedula}}}</td>
+                                <td class=" ">{{{$v->fec_vencimiento}}}</td>
                                 <td class=" ">{{{$v->nombre}}} {{{$v->apellido}}}</td>
                                 <td class=" ">{{{$v->codigo_ss}}}</td>
 
@@ -79,6 +81,7 @@
                                         <img src="data:image/png;base64,{{{$v->foto_dorso}}}" width='60' height='80'/>
                                     </a>
                                 </td>
+                                <td class=" ">{{{$v->created_at_date}}}</td>
                                 <td>
 
                                         {{--<a href="" data-toggle="modal" data-target="#myModalcedula">--}}
